@@ -1,0 +1,22 @@
+{
+   "Toothpaste": {
+       "price": 6.30,
+       "stock": 40,
+       "barcode": 9300632066025
+   },
+   "Weet-bix": {
+       "price": 4.99,
+       "stock": 25,
+       "barcode": 9414942010750
+   },
+    "Shampoo": {
+         "price": 5.50,
+         "stock": 30,
+         "barcode": 9300632066026
+    },
+    "Ice Cream": {
+         "price": 3.99,
+         "stock": 50,
+         "barcode": 9300632066027
+    }
+}

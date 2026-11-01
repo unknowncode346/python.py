@@ -1,3 +1,20 @@
+import json
+
+products = {}
+cart = {}
+
+def loading_inventory():
+   """Load data from a JSON files"""
+   try:
+       with open('data/inventory.json') as file:
+           data = json.load(file)
+       return data
+   except (FileNotFoundError, json.JSONDecodeError) as e:
+       print(f"Error loading data: {e}")
+       return {}
+
+
+
 def loading_inventory():
     print("You entered 1 for loading inventory.")
 
@@ -11,7 +28,7 @@ def displaying_cart():
     print("You entered 4 for displaying cart.")
 
 def quit():
-    print("You entered q or Q to quit")
+    print("Enter q or Q to quit")
 
 while True:
     print("----------------------------------------")
