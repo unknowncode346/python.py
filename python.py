@@ -25,7 +25,7 @@ def displaying_inventory():
 
 def shopping():
     print("You entered 3 for shopping.")
-    
+
 
 def displaying_cart():
     print("You entered 4 for displaying cart.")
