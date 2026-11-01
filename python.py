@@ -4,6 +4,7 @@ products = {}
 cart = {}
 
 def loading_inventory():
+   print("You entered 1 for loading inventory.")
    """Load data from a JSON files"""
    try:
        with open('data/inventory.json') as file:
@@ -14,15 +15,17 @@ def loading_inventory():
        return {}
 
 
-
-def loading_inventory():
-    print("You entered 1 for loading inventory.")
-
 def displaying_inventory():
     print("You entered 2 for displaying inventory.")
+    print("--------")
+    for name, details in products.items():
+       print(f"{name} - ${details['price']}")
+    print("--------") 
+
 
 def shopping():
     print("You entered 3 for shopping.")
+    
 
 def displaying_cart():
     print("You entered 4 for displaying cart.")
@@ -38,7 +41,7 @@ while True:
     print("Enter 4 for displaying cart:")
     print("Enter q or Q to quit")
     print("----------------------------------------")
-    
+
     menu_option= input ("Please enter your option here: ")
     print("You entered option: " + menu_option)
 
