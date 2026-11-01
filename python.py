@@ -1,17 +1,17 @@
 def loading_inventory():
-    print("Loading inventory ...")
+    print("You entered 1 for loading inventory.")
 
 def displaying_inventory():
-    print("Displaying inventory ...")
+    print("You entered 2 for displaying inventory.")
 
 def shopping():
-    print("Shopping...")
+    print("You entered 3 for shopping.")
 
 def displaying_cart():
-    print("Displaying cart...")
+    print("You entered 4 for displaying cart.")
 
 def quit():
-    print("Enter q or Q to quit")
+    print("You entered q or Q to quit")
 
 while True:
     print("----------------------------------------")
