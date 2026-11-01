@@ -1,8 +1,8 @@
 def loading_inventory():
-    print("Loading inventory...")
+    print("Loading inventory ...")
 
 def displaying_inventory():
-    print("Displaying inventory...")
+    print("Displaying inventory ...")
 
 def shopping():
     print("Shopping...")
