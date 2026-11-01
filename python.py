@@ -4,7 +4,6 @@ products = {}
 cart = {}
 
 def loading_inventory():
-   print("You entered 1 for loading inventory.")
    """Load data from a JSON files"""
    try:
        with open('data/inventory.json') as file:
@@ -16,7 +15,6 @@ def loading_inventory():
 
 
 def displaying_inventory():
-    print("You entered 2 for displaying inventory.")
     print("--------")
     for name, details in products.items():
        print(f"{name} - ${details['price']}")
@@ -24,14 +22,39 @@ def displaying_inventory():
 
 
 def shopping():
-    print("You entered 3 for shopping.")
+    print("--------")
+    print("Please start scanning your first item. Type 'done' when you are finished.")
+    print("Hit Enter key to STOP scaning")
+    while True:
+        # At the start match= False will be set to True once item is found in the inventory
+        match = False
+        item = input("Please scan your item: ")
+        if item.lower() == "done":
+            break
+        for name, details in products.items():
+            if item.lower() == name.lower():
+                match = True
+                quantity = input(f"How many {name} would you like to add to your cart? ")
+                if quantity.isdigit() and int(quantity) > 0:
+                    cart[name] = cart.get(name, 0) + int(quantity)
+                    print(f"{quantity} {name}(s) added to your cart.")
+                else:
+                    print("Invalid quantity. Please enter a positive integer.")
+                break
+        if not match:
+            print(f"{item} is not found in the inventory. Please try again.")
+
+
 
 
 def displaying_cart():
-    print("You entered 4 for displaying cart.")
+    print("--------")
+    for name, quantity in cart.items():
+        print(f"{name} - Quantity: {quantity}")
+    print("--------")
 
 def quit():
-    print("Enter q or Q to quit")
+    print("Goodbye!")
 
 while True:
     print("----------------------------------------")
@@ -43,10 +66,12 @@ while True:
     print("----------------------------------------")
 
     menu_option= input ("Please enter your option here: ")
+    
     print("You entered option: " + menu_option)
 
     if menu_option == "1":
         print("You entered option 1 for loading inventory")
+        products = loading_inventory()
     elif menu_option == "2":   
         print("You entered option 2 for displaying inventory")
     elif menu_option == "3":
