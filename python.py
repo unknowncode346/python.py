@@ -28,7 +28,7 @@ def shopping():
     while True:
         barcode = input("Scan your item: ")
         if barcode == "":  
-            print("item")
+            print("item")  
 
 def displaying_cart():
     print("--------")
