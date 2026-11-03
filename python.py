@@ -49,8 +49,6 @@ while True:
     print("----------------------------------------")
 
     menu_option= input ("Please enter your option here: ")
-    
-
     print("You entered option: " + menu_option)
 
     if menu_option == "1":
