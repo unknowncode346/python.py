@@ -1,4 +1,4 @@
-import inventory.json
+import json
 
 products = {}
 cart = {}
