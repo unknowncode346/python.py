@@ -26,26 +26,9 @@ def shopping():
     print("Please start scanning your first item. Type 'done' when you are finished.")
     print("Hit Enter key to STOP scaning")
     while True:
-        # At the start match= False will be set to True once item is found in the inventory
-        match = False
-        item = input("Please scan your item: ")
-        if item.lower() == "done":
-            break
-        for name, details in products.items():
-            if item.lower() == name.lower():
-                match = True
-                quantity = input(f"How many {name} would you like to add to your cart? ")
-                if quantity.isdigit() and int(quantity) > 0:
-                    cart[name] = cart.get(name, 0) + int(quantity)
-                    print(f"{quantity} {name}(s) added to your cart.")
-                else:
-                    print("Invalid quantity. Please enter a positive integer.")
-                break
-        if not match:
-            print(f"{item} is not found in the inventory. Please try again.")
-
-
-
+        barcode = input("Scan your item: ")
+        if barcode == "9300632066025":
+            print("Enter item barcode")
 
 def displaying_cart():
     print("--------")
@@ -74,10 +57,13 @@ while True:
         products = loading_inventory()
     elif menu_option == "2":   
         print("You entered option 2 for displaying inventory")
+        displaying_inventory()
     elif menu_option == "3":
         print("You entered option 3 for shopping")
+        shopping()
     elif menu_option == "4":
         print("You entered option 4 for displaying cart")
+        displaying_cart()
     elif menu_option == "q" or menu_option == "Q":
         print("Goodbye!")
         break
