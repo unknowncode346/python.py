@@ -52,7 +52,7 @@ while True:
     print("Enter q or Q to quit")
     print("---------------------------------")
 
-    choice = input("Enter your choice: ")
+    barcode = input("Enter your choice: ")
 
     menu_option= input ("Please enter your option here: ")
     if menu_option == "1":
@@ -65,7 +65,7 @@ while True:
     elif menu_option == "3":
         shopping() 
     elif menu_option == "4":
-        displaying_cart() 
+        cart() 
     elif menu_option == "q" or menu_option == "Q":
         print("Good Bye")
         break
