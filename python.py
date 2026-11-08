@@ -35,6 +35,11 @@ def displaying_item(cart_item):
     print("----------------------------------")  
     for item in cart:
        print(f"{item['name']} - ${item['price']}")
+    for name, details in products.items():
+        if barcode == str(details['barcode']):
+           cart_item = {"name": name, **details}
+           cart.append(cart_item)
+       
 
 
 
@@ -42,6 +47,7 @@ def shopping():
     print("--------")
     print("Please start scanning your first item. Type 'done' when you are finished.")
     print("Hit Enter key to STOP scaning")
+
 
 while True:
     print("---------------------------------")
@@ -53,6 +59,7 @@ while True:
     print("---------------------------------")
 
     barcode = input("Enter your choice: ")
+
 
     menu_option= input ("Please enter your option here: ")
     if menu_option == "1":
